@@ -2,10 +2,19 @@ from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
+from rest_framework import viewsets
+from rest_framework.permissions import IsAuthenticated
+from EmployeeApp.models import Departments, Employees
+from django.contrib.auth import get_user_model
 
 from EmployeeApp.models import Departments, Employees
-from EmployeeApp.serializers import DepartmentSerializer, EmployeeSerializer
+from EmployeeApp.serializers import UserSerializer, DepartmentSerializer, EmployeeSerializer
 # Create your views here.
+
+class UserViewSet(viewsets.ModelViewSet):
+    permission_classes = [IsAuthenticated]
+    serializer_class = UserSerializer
+    queryset = get_user_model().objects.all()
 
 @csrf_exempt
 def departmentApi(request, id=0):
