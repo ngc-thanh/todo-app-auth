@@ -17,7 +17,6 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 import mimetypes
-import django_heroku
 
 load_dotenv('.env')
 mimetypes.add_type("text/css", ".css", True)
@@ -160,4 +159,3 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-django_heroku.settings(locals())
