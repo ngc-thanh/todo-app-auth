@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from EmployeeApp.models import Departments, Employees
+from EmployeeApp.models import Department, Employee
 from django.contrib.auth import get_user_model
 
 class UserSerializer(serializers.ModelSerializer):
@@ -9,10 +9,10 @@ class UserSerializer(serializers.ModelSerializer):
 
 class DepartmentSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Departments
+        model = Department
         fields = ('DepartmentId', 'DepartmentName')
 
 class EmployeeSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Employees
+        model = Employee
         fields = ('EmployeeId', 'EmployeeName', 'Department', 'DateOfJoining', 'PhotoFileName')

@@ -4,10 +4,9 @@ from rest_framework.parsers import JSONParser
 from django.http.response import JsonResponse
 from rest_framework import viewsets
 from rest_framework.permissions import IsAuthenticated
-from EmployeeApp.models import Departments, Employees
+from EmployeeApp.models import Department, Employee
 from django.contrib.auth import get_user_model
 
-from EmployeeApp.models import Departments, Employees
 from EmployeeApp.serializers import UserSerializer, DepartmentSerializer, EmployeeSerializer
 # Create your views here.
 
