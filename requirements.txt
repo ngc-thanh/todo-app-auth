@@ -1,4 +1,4 @@
-django==4.1
+django==4.1.6
 djangorestframework
 python-dotenv
 django-cors-headers
